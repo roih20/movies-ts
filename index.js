@@ -24,4 +24,3 @@ mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopolo
     .then(() => app.listen(PORT , () => console.log(`Server on port ${port} and connected to database`)))
     .catch((err)=> console.log(err));
 
-mongoose.set('useFindAndModify', false);
