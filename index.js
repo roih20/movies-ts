@@ -21,6 +21,6 @@ app.use('/auth', authentication);
 app.use('/movies', moviesRoutes);
 
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => app.listen(PORT , () => console.log(`Server on port ${port} and connected to database`)))
+    .then(() => app.listen(PORT , () => console.log(`Server on port ${PORT} and connected to database`)))
     .catch((err)=> console.log(err));
 
