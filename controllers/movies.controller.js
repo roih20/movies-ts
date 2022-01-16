@@ -148,4 +148,40 @@ export const getHorrorMovies = async (req, res) => {
   }
 };
 
+export const getComedyMovies = async (req, res) => {
+  try {
+    const comedyMovies = await MoviesModel.find({gender: "Comedy"})
+    res.status(200).json(comedyMovies)
+  } catch (error) {
+    res.status(500).json({error})
+  }
+}
+
+export const getScienceFictionMovies = async (req, res) => {
+  try {
+    const  scMovies = await MoviesModel.find({gender: "Science fiction"})
+    res.status(200).json(scMovies)
+  } catch (error) {
+    res.status(500).json({error})
+  }
+}
+
+export const familyMovies = async (req, res) => {
+  try {
+    const family = await MoviesModel.find({gender: "Family"})
+    res.status(200).json(family)
+  } catch (error) {
+    res.statu(500).json({error})
+  }
+}
+
+export const kidsMovie = async (req, res) => {
+  try {
+    const kids = await MoviesModel.find({gender: "Kids"})
+    res.status(200).json(kids)
+  } catch (error) {
+    res.status(500).json({error})
+  }
+}
+
 export default router;
