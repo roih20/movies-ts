@@ -15,11 +15,13 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors());
 
 
-const port = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use('/auth', authentication);
 app.use('/movies', moviesRoutes);
 
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => app.listen((port || process.env.PORT) , () => console.log(`Server on port ${port} and connected to database`)))
+    .then(() => app.listen(PORT , () => console.log(`Server on port ${port} and connected to database`)))
     .catch((err)=> console.log(err));
+
+mongoose.set('useFindAndModify', false);
