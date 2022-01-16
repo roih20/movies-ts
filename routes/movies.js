@@ -13,13 +13,14 @@ router.post('/',auth, postMovies);
 router.get('/action',auth, getActionMovies);
 router.get('/horror',auth, getHorrorMovies )
 router.get('/search',auth,getMoviesBySearch);
-router.delete('/:id',auth, deleteMovies);
-router.patch('/:id',auth, updateMovies);
-router.get('/:id',auth, getMoviesByid);
 router.get('/kids', auth, kidsMovie);
 router.get('/science-fiction', auth ,getScienceFictionMovies);
 router.get('/comedy', auth, getComedyMovies );
 router.get('/family-movies', auth, familyMovies);
+router.delete('/:id',auth, deleteMovies);
+router.patch('/:id',auth, updateMovies);
+router.get('/:id',auth, getMoviesByid);
+
 
 
 
